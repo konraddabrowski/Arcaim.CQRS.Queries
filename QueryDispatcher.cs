@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Arcaim.CQRS.Queries
 {
-    public class QueryDispatcher : IQueryDispatcher
+    internal sealed class QueryDispatcher : IQueryDispatcher
     {
         private readonly IServiceScopeFactory _serviceFactory;
 
