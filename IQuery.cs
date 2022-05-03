@@ -1,10 +1,9 @@
-﻿namespace Arcaim.CQRS.Queries
-{
-    public interface IQuery
-    {
-    }
+﻿namespace Arcaim.CQRS.Queries;
 
-    public interface IQuery<T> : IQuery
-    {
-    }
+public interface IQuery
+{
+}
+
+public interface IQuery<T> : IQuery
+{
 }
