@@ -13,6 +13,7 @@ internal sealed class QueryDispatcher : IQueryDispatcher
   }
 
   public async Task<TResult> DispatchAsync<TResult>(IQuery<TResult> query)
+    where TResult : new()
   {
     using var scope = _serviceFactory.CreateScope();
     var handlerType = typeof(IQueryHandler<,>).MakeGenericType(query.GetType(), typeof(TResult));
@@ -20,7 +21,9 @@ internal sealed class QueryDispatcher : IQueryDispatcher
     return await handler.HandleAsync((dynamic)query);
   }
 
-  public async Task<TResult> DispatchAsync<TQuery, TResult>(TQuery query) where TQuery : class, IQuery<TResult>
+  public async Task<TResult> DispatchAsync<TQuery, TResult>(TQuery query)
+    where TQuery : IQuery<TResult>, new()
+    where TResult : new()
   {
     using var scope = _serviceFactory.CreateScope();
     var handler = scope.ServiceProvider.GetRequiredService<IQueryHandler<TQuery, TResult>>();
