@@ -6,19 +6,18 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <LangVersion>preview</LangVersion>
+    <LangVersion>11</LangVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <!-- <LangVersion>Latest</LangVersion> -->
     <AssemblyName>Arcaim.CQRS.Queries</AssemblyName>
     <Title>Arcaim.CQRS.Queries</Title>
     <PackageId>Arcaim.CQRS.Queries</PackageId>
     <Company>Arcaim</Company>
-    <Version>7.0.0-preview7</Version>
+    <Version>7.0.8</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Arcaim.DI.Scanner" Version="7.0.0-preview7" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0-preview.7.22375.6">
+    <PackageReference Include="Arcaim.DI.Scanner" Version="7.0.8" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0">
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
   </ItemGroup>
